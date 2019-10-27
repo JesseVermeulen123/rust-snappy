@@ -4,11 +4,11 @@ set -ex
 
 RUST_TARGET="x86_64-unknown-linux-gnu"
 
-if [[ "${TRAVIS_RUST_ARCHITECTURE}" == "i386" ]]; then
+if [ "${TRAVIS_RUST_ARCHITECTURE}" = "i386" ]; then
   RUST_TARGET="i686-unknown-linux-gnu"
 fi
 
-if [[ "${RUST_TARGET}" == "i686-unknown-linux-gnu" ]]; then
+if [ "${RUST_TARGET}" = "i686-unknown-linux-gnu" ]; then
   apt-get update
   apt-get install -y gcc-multilib
 fi
